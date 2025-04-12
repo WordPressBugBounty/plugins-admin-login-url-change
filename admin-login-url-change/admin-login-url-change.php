@@ -3,7 +3,7 @@
  * Plugin Name:       Admin login URL Change
  * Plugin URI:        https://wordpress.org/plugins/admin-login-url-change/
  * Description:       Allows you to Change your WordPress WebSite Login URL.
- * Version:           1.1.0
+ * Version:           1.1.1
  * Requires at least: 4.7
  * Tested up to: 6.7
  * Requires PHP:      5.3
