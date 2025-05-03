@@ -40,3 +40,83 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.jh-admin-setting-box{
+  display: flex;
+  justify-content: space-between;
+}
+.jh-admin-setting-box .jh-admin-setting-form{
+  width: calc(100% - 344px);
+}
+.jh-admin-setting-box .jh-admin-setting-form .admin_url_notes ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.jh-admin-setting-box .jh-admin-setting-form .admin_url_notes ul li{
+  margin-bottom: 15px;
+}
+.jh-admin-setting-box .jh-link-boxs{
+  width: 320px;
+}
+.jh-admin-setting-box .jh-link-boxs .jh-link-box{
+  background-color: #fff;
+  border-radius:10px;
+  margin-bottom: 15px;
+}
+.jh-admin-setting-box .jh-link-boxs .jh-link-box a{
+  display: block;
+  padding: 24px;
+  text-decoration: none;
+  text-align: center;
+}
+.jh-admin-setting-box .jh-link-boxs .jh-link-box a img{
+  margin-bottom: 15px;
+}
+.jh-admin-setting-box .jh-link-boxs .jh-link-box a h3{
+  font-size: 20px;
+  margin: 0;
+  color: #000;
+  display: block;
+  line-height: 24px;
+  margin-bottom: 15px;
+}
+.jh-admin-setting-box .jh-link-boxs .jh-link-box a p{
+  font-size: 15px;
+  margin: 0;
+  color: #000;
+  display: block;
+  line-height: 24px;
+}
+.jh-admin-setting-box .jh-link-boxs .jh-link-box a span{
+  margin-bottom: 0;
+  display: inline-block;
+  border: 2px solid #003c79;
+  border-radius: 6px;
+  padding: 9px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #003c79;
+  margin-top: 15px;
+  line-height: 1;
+  transition: .3s all ease;
+}
+.jh-admin-setting-box .jh-link-boxs .jh-link-box a span:hover{
+  background-color: #003c79;
+  color: #fff;
+}
+
+/* Responsive */
+
+@media all and (max-width: 991px){
+  .jh-admin-setting-box{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .jh-admin-setting-box .jh-admin-setting-form{
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .jh-admin-setting-box .jh-link-boxs{
+    width: 100%;
+  }
+}
