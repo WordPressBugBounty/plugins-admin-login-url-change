@@ -125,10 +125,17 @@ class ALUC_Login_Handler {
     }
 
     public function aluc_save_slug_ajax() {
-    
+
+        // Check capability.
+        if ( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json_error( [ 'message' => 'Unauthorized' ] );
+            wp_die();
+        }
+
         // Check if a nonce is valid.
-        if (  !isset( $_POST['_nonce'] ) || !wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_nonce'] ) ), 'aluc-ajax-nonce' ) ) {
-            return;
+        if ( ! isset( $_POST['_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_nonce'] ) ), 'aluc-ajax-nonce' ) ) {
+            wp_send_json_error( [ 'message' => 'Invalid nonce' ] );
+            wp_die();
         }
 
         // Allowed: letters, numbers, underscores
