@@ -3,7 +3,7 @@ Contributors: jahidcse
 Tags: change wp-login, login, remove wp-login, wordpress login, custom login, login customizer, custom login url, images protection, content, right click disabled, F12 disabled, Copy content, disabled, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + Shift + C, Ctrl + U, wp developers, SEO, css, html
 Requires at least: 4.7
 Tested up to: 7.0
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -55,6 +55,11 @@ No, the plugin is fully compatible with native WordPress login flows and integra
 2. Other Settings
 
 == Changelog ==
+
+= 1.2.1 =
+
+* Added: Compatibility with WooCommerce 11.0.1
+* Added: Compatibility with Elementor 4.2.2
 
 = 1.2.0 =
 
