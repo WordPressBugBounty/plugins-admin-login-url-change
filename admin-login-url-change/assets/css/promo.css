@@ -1,0 +1,188 @@
+/* Early Black Friday promo: admin notice + settings banner */
+
+.aluc-promo-notice,
+.aluc-promo-banner {
+    --aluc-promo-bg: #111318;
+    --aluc-promo-text: #f4f4f6;
+    --aluc-promo-muted: #a6a9b3;
+    --aluc-promo-accent: #ffb020;
+    --aluc-promo-accent-text: #1a1203;
+    --aluc-promo-border: #2a2d36;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 16px 44px 16px 16px;
+    background: var(--aluc-promo-bg);
+    color: var(--aluc-promo-text);
+    border: 1px solid var(--aluc-promo-border);
+    border-left: 4px solid var(--aluc-promo-accent);
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+.aluc-promo-notice { margin: 15px 0 10px; }
+.aluc-promo-banner { margin: 0 0 20px; padding-right: 16px; }
+
+.aluc-promo-badge {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--aluc-promo-accent);
+    color: var(--aluc-promo-accent-text);
+    line-height: 1;
+    font-weight: 800;
+}
+.aluc-promo-badge-num { font-size: 22px; letter-spacing: -.5px; }
+.aluc-promo-badge-off { font-size: 11px; letter-spacing: 1.5px; margin-top: 3px; }
+
+.aluc-promo-body { flex: 1 1 auto; min-width: 0; }
+
+.aluc-promo-notice p,
+.aluc-promo-banner p { margin: 0; padding: 0; }
+
+/* Scoped + !important on colors: WP core and other plugins style `.notice p` / `.wrap p`. */
+.aluc-promo-notice .aluc-promo-eyebrow,
+.aluc-promo-banner .aluc-promo-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: var(--aluc-promo-accent) !important;
+}
+.aluc-promo-notice .aluc-promo-eyebrow span,
+.aluc-promo-banner .aluc-promo-eyebrow span { color: var(--aluc-promo-muted) !important; }
+
+.aluc-promo-notice .aluc-promo-title,
+.aluc-promo-banner .aluc-promo-title {
+    margin: 4px 0 4px !important;
+    padding: 0;
+    font-size: 17px;
+    line-height: 1.3;
+    color: var(--aluc-promo-text) !important;
+}
+
+.aluc-promo-notice .aluc-promo-features,
+.aluc-promo-banner .aluc-promo-features {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--aluc-promo-muted) !important;
+}
+
+.aluc-promo-notice .aluc-promo-howto,
+.aluc-promo-banner .aluc-promo-howto {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--aluc-promo-muted) !important;
+}
+.aluc-promo-notice .aluc-promo-howto strong,
+.aluc-promo-banner .aluc-promo-howto strong {
+    color: var(--aluc-promo-accent) !important;
+    font-family: Menlo, Consolas, monospace;
+    letter-spacing: .5px;
+}
+
+.aluc-promo-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    margin-top: 12px;
+}
+.aluc-promo-banner .aluc-promo-actions { margin-top: 0; flex: 0 0 auto; }
+
+/* Coupon chip */
+.aluc-promo-coupon {
+    display: inline-flex;
+    align-items: stretch;
+    padding: 0;
+    border: 1px dashed var(--aluc-promo-accent);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--aluc-promo-text);
+    cursor: pointer;
+    font: inherit;
+    overflow: hidden;
+}
+.aluc-promo-coupon-code {
+    padding: 5px 10px;
+    font-family: Menlo, Consolas, monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.aluc-promo-coupon-copy {
+    padding: 5px 10px;
+    font-size: 12px;
+    background: rgba(255, 176, 32, .15);
+    color: var(--aluc-promo-accent);
+}
+.aluc-promo-coupon:hover .aluc-promo-coupon-copy,
+.aluc-promo-coupon:focus-visible .aluc-promo-coupon-copy {
+    background: var(--aluc-promo-accent);
+    color: var(--aluc-promo-accent-text);
+}
+.aluc-promo-coupon:focus-visible { outline: 2px solid var(--aluc-promo-accent); outline-offset: 2px; }
+
+/* CTA */
+.aluc-promo-notice .aluc-promo-cta.button-primary {
+    background: var(--aluc-promo-accent);
+    border-color: var(--aluc-promo-accent);
+    color: var(--aluc-promo-accent-text);
+    font-weight: 600;
+}
+.aluc-promo-notice .aluc-promo-cta.button-primary:hover,
+.aluc-promo-notice .aluc-promo-cta.button-primary:focus {
+    background: #ffc04d;
+    border-color: #ffc04d;
+    color: var(--aluc-promo-accent-text);
+    box-shadow: none;
+}
+.aluc-promo-cta-alt {
+    display: inline-block;
+    padding: 7px 16px;
+    border-radius: 4px;
+    background: var(--aluc-promo-accent);
+    color: var(--aluc-promo-accent-text) !important;
+    font-weight: 600;
+    text-decoration: none;
+}
+.aluc-promo-cta-alt:hover { background: #ffc04d; }
+
+.aluc-promo-dismiss.button-link {
+    color: var(--aluc-promo-muted);
+    font-size: 12px;
+    text-decoration: underline;
+}
+.aluc-promo-dismiss.button-link:hover { color: var(--aluc-promo-text); }
+
+.aluc-promo-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--aluc-promo-muted);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+.aluc-promo-close:hover { color: var(--aluc-promo-text); }
+
+@media (max-width: 782px) {
+    .aluc-promo-notice,
+    .aluc-promo-banner { flex-direction: column; align-items: flex-start; }
+    .aluc-promo-badge { width: 56px; height: 56px; }
+    .aluc-promo-badge-num { font-size: 18px; }
+}

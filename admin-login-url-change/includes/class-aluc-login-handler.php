@@ -118,6 +118,8 @@ class ALUC_Login_Handler {
                 </div>
             </div>
 
+            <?php do_action( 'aluc_settings_after_header', $is_pro ); ?>
+
             <!-- Tab Navigation -->
             <nav class="aluc-tab-nav" id="aluc-tab-nav">
                 <button class="aluc-tab-btn aluc-active" data-tab="settings">
@@ -595,30 +597,6 @@ class ALUC_Login_Handler {
             </div>
             <?php endforeach; ?>
 
-            <?php if ( ! $is_pro ) : ?>
-            <!-- Footer Upgrade Banner -->
-            <div class="aluc-footer-upgrade-banner" id="aluc-footer-upgrade-banner">
-                <div class="aluc-footer-upgrade-inner">
-                    <div class="aluc-footer-upgrade-left">
-                        <div class="aluc-footer-upgrade-emoji">🚀</div>
-                        <div>
-                            <strong><?php esc_html_e( 'Unlock the full power of Admin Login URL Change Pro', 'admin-login-url-change' ); ?></strong>
-                            <span><?php esc_html_e( 'IP Blocker · Country Block · Login Limiter · Two-Factor Auth · Priority Support', 'admin-login-url-change' ); ?></span>
-                        </div>
-                    </div>
-                    <div class="aluc-footer-upgrade-right">
-                        <a href="<?php echo esc_url( admin_url( 'admin.php?page=admin-login-url-change-pricing' ) ); ?>" class="aluc-footer-upgrade-btn">
-                            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                            <?php esc_html_e( 'Upgrade to Pro', 'admin-login-url-change' ); ?>
-                        </a>
-                        <button type="button" class="aluc-footer-upgrade-dismiss" id="aluc-banner-dismiss" title="Dismiss">
-                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <?php endif; ?>
-
         </div><!-- #aluc-settings-wrap -->
     <?php
     }
@@ -734,28 +712,7 @@ class ALUC_Login_Handler {
                 </a>
             </div>
 
-            <!-- Upgrade CTA (only for free users) -->
-            <?php if ( ! $is_pro ) : ?>
-            <div class="aluc-upgrade-card">
-                <h3>🔒 <?php esc_html_e( 'Go Pro & Stay Safe', 'admin-login-url-change' ); ?></h3>
-                <p><?php esc_html_e( 'Unlock advanced security features and protect your site from every angle.', 'admin-login-url-change' ); ?></p>
-                <ul class="aluc-upgrade-features">
-                    <li><?php esc_html_e( 'IP Address Blocker', 'admin-login-url-change' ); ?></li>
-                    <li><?php esc_html_e( 'Country-level blocking', 'admin-login-url-change' ); ?></li>
-                    <li><?php esc_html_e( 'Login attempt limiter', 'admin-login-url-change' ); ?></li>
-                    <li><?php esc_html_e( 'Two-factor authentication (2FA)', 'admin-login-url-change' ); ?></li>
-                    <li><?php esc_html_e( 'Full Login Log', 'admin-login-url-change' ); ?></li>
-                    <li><?php esc_html_e( 'Login Alerts', 'admin-login-url-change' ); ?></li>
-                    <li><?php esc_html_e( 'Temp Login User using URL', 'admin-login-url-change' ); ?></li>
-                    <li><?php esc_html_e( 'Real-time attack dashboard', 'admin-login-url-change' ); ?></li>
-                    <li><?php esc_html_e( 'Priority support', 'admin-login-url-change' ); ?></li>
-                </ul>
-                <a href="<?php echo esc_url( admin_url( 'admin.php?page=admin-login-url-change-pricing' ) ); ?>" class="aluc-btn-upgrade">
-                    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-                    <?php esc_html_e( 'Upgrade to Pro', 'admin-login-url-change' ); ?>
-                </a>
-            </div>
-            <?php else : ?>
+            <?php if ( $is_pro ) : ?>
             <!-- Pro Active badge in sidebar -->
             <div class="aluc-pro-active-card">
                 <div class="aluc-pro-active-icon">
